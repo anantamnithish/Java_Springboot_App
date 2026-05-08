@@ -15,3 +15,62 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+
+# Log files
+*.log
+
+# Compiled files
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Spring Boot
+*.jar
+*.war
+*.zip
+*.tar.gz
+
+# Build and test output
+/build/
+/out/
+/test-output/
+*.ser
+
+# Database
+*.db
+*.h2.db
+*.sqlite
+
+# IntelliJ IDEA
+*.patch
+*.diff
+
+# OS Specific
+.AppleDouble
+.LSOverride
+._*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary files
+*.swp
+*.swo
+*~
+.~*

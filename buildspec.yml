@@ -1,0 +1,36 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - echo Installing Maven dependencies
+      - mvn -q dependency:resolve
+
+  pre_build:
+    commands:
+      - echo Running pre-build steps
+      - mvn -q validate
+
+  build:
+    commands:
+      - echo Building the project
+      - mvn -q clean package
+
+  post_build:
+    commands:
+      - echo Build completed
+      - ls -la target
+
+artifacts:
+  files:
+    - target/*.jar
+  discard-paths: yes
+
+reports:
+  junit:
+    files:
+      - target/surefire-reports/*.xml
+    base-directory: target/surefire-reports
+    discard-paths: yes
