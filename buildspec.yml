@@ -5,18 +5,18 @@ phases:
     runtime-versions:
       java: corretto17
     commands:
-      - echo Installing Maven dependencies
-      - mvn -q dependency:resolve
+      - echo Entering install phase
+      - mvn -q -DskipTests dependency:resolve
 
   pre_build:
     commands:
-      - echo Running pre-build steps
+      - echo Entering pre_build phase
       - mvn -q validate
 
   build:
     commands:
-      - echo Building the project
-      - mvn -q clean package
+      - echo Entering build phase
+      - mvn -q clean verify
 
   post_build:
     commands:
