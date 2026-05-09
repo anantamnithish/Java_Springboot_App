@@ -16,7 +16,7 @@ phases:
   build:
     commands:
       - echo Entering build phase
-      - mvn -q clean verify
+      - mvn clean install
 
   post_build:
     commands:
