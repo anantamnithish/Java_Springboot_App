@@ -59,12 +59,6 @@ Thumbs.db
 *.patch
 *.diff
 
-# Terraform
-.terraform/
-terraform.tfstate*
-*.tfplan
-*.tfvars.json
-
 # OS Specific
 .AppleDouble
 .LSOverride
