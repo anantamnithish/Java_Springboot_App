@@ -34,7 +34,7 @@
             <url>https://ssk-563184259844.d.codeartifact.ap-south-1.amazonaws.com/maven/Java-App-Artifact/</url>
         </repository>
     </repositories>
-
+<!--
     <distributionManagement>
         <repository>
             <id>ssk-Java-App-Artifact</id>
@@ -42,7 +42,7 @@
             <url>https://ssk-563184259844.d.codeartifact.ap-south-1.amazonaws.com/maven/Java-App-Artifact/</url>
         </repository>
     </distributionManagement>
-
+-->
     <dependencies>
         <!-- Spring Boot Web Starter -->
         <dependency>
