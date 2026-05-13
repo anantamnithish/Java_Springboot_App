@@ -48,6 +48,23 @@ Thumbs.db
 /build/
 /out/
 /test-output/
+
+# Maven wrapper
+.mvn/
+
+# Local Maven repository
+.m2/
+
+# Original JAR files
+*.jar.original
+*.war.original
+
+# Editor temp files
+*.swp
+*.swo
+*~
+.DS_Store
+
 *.ser
 
 # Database
