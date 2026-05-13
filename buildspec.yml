@@ -14,21 +14,19 @@ phases:
       - cp -pvr settings.xml /root/.m2/settings.xml
 
       # Verify file exists
-      - cat /root/.m2/settings.xml
+      - ls -lrta /root/.m2/settings.xml
 
       # Get CodeArtifact token
-      - export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain ssk --domain-owner 563184259844 --region ap-south-1 --query authorizationToken --output text)
+      
 
       # Verify token exists
       - echo "Token fetched successfully"
 
-      # Resolve dependencies
-      - mvn clean install -DskipTests
 
   build:
     commands:
       - echo "Build phase started"
-
+      - export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain ssk --domain-owner 563184259844 --region ap-south-1 --query authorizationToken --output text)
       # Deploy artifact to CodeArtifact
       - mvn deploy -DskipTests
 
