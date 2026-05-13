@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>ssk-Java-App-Artifact</id>
+            <username>aws</username>
+            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>ssk-Java-App-Artifact</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>ssk-Java-App-Artifact</id>
+                    <url>https://ssk-563184259844.d.codeartifact.ap-south-1.amazonaws.com/maven/Java-App-Artifact/</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+</settings>

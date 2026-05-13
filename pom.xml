@@ -27,6 +27,22 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>ssk-Java-App-Artifact</id>
+            <name>AWS CodeArtifact Repository</name>
+            <url>https://ssk-563184259844.d.codeartifact.ap-south-1.amazonaws.com/maven/Java-App-Artifact/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>ssk-Java-App-Artifact</id>
+            <name>AWS CodeArtifact Repository</name>
+            <url>https://ssk-563184259844.d.codeartifact.ap-south-1.amazonaws.com/maven/Java-App-Artifact/</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <!-- Spring Boot Web Starter -->
         <dependency>

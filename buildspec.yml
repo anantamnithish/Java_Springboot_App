@@ -16,7 +16,10 @@ phases:
   build:
     commands:
       - echo Entering build phase
-      - mvn clean install -DskipTests
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ssk --domain-owner 563184259844 --region ap-south-1 --query authorizationToken --output text` && mvn deploy -DskipTests
+      - cp -pvr settings.xml /root/.m2/settings.xml
+      - ls -lrta /root/.m2/settings.xml
+      - mvn deploy -DskipTests
 
   post_build:
     commands:
