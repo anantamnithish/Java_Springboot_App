@@ -65,6 +65,13 @@ Thumbs.db
 *~
 .DS_Store
 
+# Terraform
+Terraform/.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+
 *.ser
 
 # Database
