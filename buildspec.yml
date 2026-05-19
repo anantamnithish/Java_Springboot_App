@@ -10,7 +10,7 @@ phases:
       - cp -pvr settings.xml /root/.m2/settings.xml
       - ls -lrta /root/.m2/settings.xml
       - echo "Verifying JFrog Artifactory connectivity..."
-      - curl -u admin:Subramanyam@2175 -I http://40.192.38.134:8082/artifactory/ssk-release/ || echo "Warning: Could not connect to Artifactory"
+      #- curl -u admin:Subramanyam@2175 -I http://40.192.38.134:8082/artifactory/ssk-release/ || echo "Warning: Could not connect to Artifactory"
   build:
     commands:
       - echo "Build phase started"
