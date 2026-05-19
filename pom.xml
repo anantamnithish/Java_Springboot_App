@@ -7,7 +7,7 @@
 
     <groupId>com.springboot</groupId>
     <artifactId>java-springboot-app</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Java SpringBoot App</name>
@@ -29,20 +29,41 @@
 
     <repositories>
         <repository>
-            <id>ssk-Java-App-Artifact</id>
-            <name>AWS CodeArtifact Repository</name>
-            <url>https://ssk-563184259844.d.codeartifact.ap-south-1.amazonaws.com/maven/Java-App-Artifact/</url>
+            <id>ssk-snapshot</id>
+            <name>JFrog Artifactory Snapshot</name>
+            <url>http://40.192.38.134:8082/artifactory/ssk-snapshot/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>ssk-release</id>
+            <name>JFrog Artifactory Release</name>
+            <url>http://40.192.38.134:8082/artifactory/ssk-release/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
         </repository>
     </repositories>
-<!--
+
     <distributionManagement>
+        <snapshotRepository>
+            <id>ssk-snapshot</id>
+            <name>JFrog Artifactory Snapshot</name>
+            <url>http://40.192.38.134:8082/artifactory/ssk-snapshot/</url>
+        </snapshotRepository>
         <repository>
-            <id>ssk-Java-App-Artifact</id>
-            <name>AWS CodeArtifact Repository</name>
-            <url>https://ssk-563184259844.d.codeartifact.ap-south-1.amazonaws.com/maven/Java-App-Artifact/</url>
+            <id>ssk-release</id>
+            <name>JFrog Artifactory Release</name>
+            <url>http://40.192.38.134:8082/artifactory/ssk-release/</url>
         </repository>
     </distributionManagement>
--->
     <dependencies>
         <!-- Spring Boot Web Starter -->
         <dependency>

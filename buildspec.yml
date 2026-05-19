@@ -8,32 +8,32 @@ phases:
       - echo "Install phase started"
 
       # Create Maven directory
-      #- mkdir -p /root/.m2
+      - mkdir -p /root/.m2
 
       # Copy settings.xml BEFORE any Maven command
-      #- cp -pvr settings.xml /root/.m2/settings.xml
+      - cp -pvr settings.xml /root/.m2/settings.xml
 
       # Verify file exists
-      #- ls -lrta /root/.m2/settings.xml
+      - ls -lrta /root/.m2/settings.xml
 
-      # Get CodeArtifact token
-      
-
-      # Verify token exists
-      #- echo "Token fetched successfully"
+      # Verify JFrog Artifactory connectivity
+      - echo "Verifying JFrog Artifactory connectivity..."
+      - curl -u admin:Subramanyam@2175 -I http://40.192.38.134:8082/artifactory/ssk-release/ || echo "Warning: Could not connect to Artifactory"
 
 
   build:
     commands:
       - echo "Build phase started"
-      #- export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain ssk --domain-owner 563184259844 --region ap-south-1 --query authorizationToken --output text)
-      # Deploy artifact to CodeArtifact
-      #- mvn deploy -DskipTests
-      - mvn install -DskipTests
+      - echo "Building with Maven and deploying to JFrog Artifactory..."
+      
+      # Deploy artifact to JFrog Artifactory
+      - mvn deploy -DskipTests
+      
 
   post_build:
     commands:
       - echo "Build completed successfully"
+      - echo "Artifacts deployed to JFrog Artifactory"
       - ls -la target
 
 artifacts:
