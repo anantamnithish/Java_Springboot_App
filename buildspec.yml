@@ -15,11 +15,9 @@ phases:
     commands:
       - echo "Build phase started"
       - echo "Building with Maven and deploying to JFrog Artifactory..."
-
+      - mvn clean package deploy -DskipTests
       - echo "Running SonarQube analysis..."
-      - mvn clean verify sonar:sonar 
-      - echo "Deploying artifacts to JFrog Artifactory..."
-      - mvn deploy -DskipTests
+      - mvn sonar:sonar -Dsonar.projectKey=Java_Spring_App -Dsonar.projectName='Java_Spring_App' -Dsonar.host.url=http://16.112.225.192:9000 -Dsonar.token=sqp_80be4fe97a54ff182b525c859f7e07a95720bd67
   post_build:
     commands:
       - echo "Build completed successfully"
