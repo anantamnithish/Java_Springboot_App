@@ -36,7 +36,7 @@
         <repository>
             <id>ssk-snapshot</id>
             <name>JFrog Artifactory Snapshot</name>
-            <url>http://40.192.38.134:8082/artifactory/ssk-snapshot/</url>
+            <url>http://18.61.228.100:8082/artifactory/ssk-snapshot/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -47,7 +47,7 @@
         <repository>
             <id>ssk-release</id>
             <name>JFrog Artifactory Release</name>
-            <url>http://40.192.38.134:8082/artifactory/ssk-release/</url>
+            <url>http://18.61.228.100:8082/artifactory/ssk-release/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
