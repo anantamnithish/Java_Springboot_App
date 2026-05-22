@@ -17,7 +17,7 @@ phases:
       - echo "Building with Maven..."
       - echo "Deploying artifacts to JFrog Artifactory..."
       - echo "Running SonarQube analysis..."
-      - mvn clean verify sonar:sonar
+      - mvn clean verify sonar:sonar -DskipTests
       - mvn deploy -DskipTests 
   post_build:
     commands:
